@@ -19,33 +19,39 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     self.isAnimated = YES;
-    self.message = @"Loading...";
+    self.message = nil;
     self.hudView = [BLKLoadingView sharedView];
     self.hudView.isRotation = YES;
     [self.rotationSwitch setOn:YES animated:NO];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-}
-
-- (IBAction)rotationChanged:(id)sender {
+- (IBAction)rotationChanged:(id)sender
+{
     self.hudView.isRotation = self.rotationSwitch.isOn;
 }
 
-- (IBAction)animationChanged:(id)sender {
+- (IBAction)animationChanged:(id)sender
+{
     self.isAnimated = self.animationSwitch.isOn;
 }
 
-- (IBAction)messageChanged:(id)sender {
+- (IBAction)messageChanged:(id)sender
+{
     self.message = self.messageSwitch.isOn ? @"Loading..." : nil;
 }
 
-- (IBAction)buttonShowWasTouched:(id)sender {
+- (IBAction)backgroundChanged:(id)sender
+{
+    self.hudView.backgroundView.backgroundColor = self.backgroundSwitch.isOn ? [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8] : [UIColor clearColor];
+}
+
+- (IBAction)buttonShowWasTouched:(id)sender
+{
     [self.hudView showWithMessage:self.message animated:self.isAnimated];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

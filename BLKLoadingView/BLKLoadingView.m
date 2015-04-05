@@ -8,15 +8,10 @@
 
 #import "BLKLoadingView.h"
 
-@interface BLKLoadingView ()
-
-@property (nonatomic, strong) NSTimer *fadeOutTimer;
-
-@end
-
 @implementation BLKLoadingView
 
-+ (BLKLoadingView*)sharedView {
++ (BLKLoadingView*)sharedView
+{
     static dispatch_once_t once;
     static BLKLoadingView *sharedView;
     dispatch_once(&once, ^{
@@ -54,7 +49,6 @@
         [self.superview bringSubviewToFront:self];
     }
 
-    self.fadeOutTimer = nil;
     self.messageLabel.text = message;
     self.hudContainerView.transform = CGAffineTransformIdentity;
 
@@ -63,7 +57,7 @@
         anim.fromValue = @0.0;
         anim.toValue = @(2 * M_PI);
         anim.valueFunction = [CAValueFunction functionWithName:kCAValueFunctionRotateZ];
-        anim.duration = 2;
+        anim.duration = 1;
         anim.repeatCount = HUGE_VALF;
 
         [self.hudView.layer addAnimation:anim forKey:nil];
@@ -126,15 +120,15 @@
 
 #pragma mark Setter
 
-- (void)setFadeOutTimer:(NSTimer *)newTimer {
-    if(_fadeOutTimer) {
-        [_fadeOutTimer invalidate];
-        _fadeOutTimer = nil;
+- (void)replaceHudView:(UIView *)hudView
+{
+    for (UIView *subview in self.hudContainerView.subviews) {
+        [subview removeFromSuperview];
     }
 
-    if(newTimer) {
-        _fadeOutTimer = newTimer;
-    }
+    _hudView = hudView;
+    _hudView.frame = self.hudContainerView.bounds;
+    [self.hudContainerView addSubview:_hudView];
 }
 
 @end

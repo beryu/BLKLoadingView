@@ -20,5 +20,5 @@
 - (void) showWithAnimated:(BOOL)animated;
 - (void) showWithMessage:(NSString *)message animated:(BOOL)animated;
 - (void) dismissWithAnimated:(BOOL)animated;
-
+- (void) replaceHudView:(UIView *)hudView;
 @end

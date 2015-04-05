@@ -14,26 +14,25 @@
                     <rect key="frame" x="110" y="234" width="100" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Le4-QM-O7e">
-                            <rect key="frame" x="8" y="75" width="84" height="25"/>
+                            <rect key="frame" x="8" y="68" width="84" height="32"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="25" id="ut2-2r-sia"/>
+                                <constraint firstAttribute="height" constant="32" id="ut2-2r-sia"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xxe-kd-gNr">
-                            <rect key="frame" x="25" y="25" width="50" height="50"/>
+                            <rect key="frame" x="30" y="30" width="40" height="40"/>
                             <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZpP-Mc-mVL">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </view>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Loading" translatesAutoresizingMaskIntoConstraints="NO" id="MZ4-PM-EfM">
+                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                </imageView>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="aQ4-Xp-zOy"/>
-                                <constraint firstAttribute="width" constant="50" id="pTG-ks-UH6"/>
+                                <constraint firstAttribute="height" constant="40" id="aQ4-Xp-zOy"/>
+                                <constraint firstAttribute="width" constant="40" id="pTG-ks-UH6"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -58,9 +57,12 @@
             <connections>
                 <outlet property="backgroundView" destination="Z9a-m7-HaS" id="tms-rI-kqp"/>
                 <outlet property="hudContainerView" destination="Xxe-kd-gNr" id="FNZ-fd-EA8"/>
-                <outlet property="hudView" destination="ZpP-Mc-mVL" id="FQW-9r-OjE"/>
+                <outlet property="hudView" destination="MZ4-PM-EfM" id="ezO-zF-VEx"/>
                 <outlet property="messageLabel" destination="Le4-QM-O7e" id="FaM-TZ-YX1"/>
             </connections>
         </view>
     </objects>
+    <resources>
+        <image name="Loading" width="114" height="114"/>
+    </resources>
 </document>

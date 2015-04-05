@@ -97,7 +97,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xp2-JR-eyy">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Xp2-JR-eyy">
                                                     <rect key="frame" x="263" y="6" width="51" height="31"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="49" id="nWc-r3-W43"/>
@@ -117,6 +117,40 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="USN-Sh-Bao">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="USN-Sh-Bao" id="f8h-pp-eA9">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ed8-B6-Dzo">
+                                                    <rect key="frame" x="8" y="11" width="200" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="cJC-iJ-WI2"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rfZ-lw-18g">
+                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="49" id="jwB-b2-ppt"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="backgroundChanged:" destination="Hir-fM-Yic" eventType="valueChanged" id="Nsu-Rh-uen"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rfZ-lw-18g" firstAttribute="top" secondItem="f8h-pp-eA9" secondAttribute="top" constant="6" id="7X2-nn-G4Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="ed8-B6-Dzo" secondAttribute="bottom" constant="11" id="I1T-ZL-aRE"/>
+                                                <constraint firstAttribute="bottom" secondItem="rfZ-lw-18g" secondAttribute="bottom" constant="6" id="cX9-jL-VEL"/>
+                                                <constraint firstItem="ed8-B6-Dzo" firstAttribute="leading" secondItem="f8h-pp-eA9" secondAttribute="leading" constant="8" id="dg5-pA-saZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="rfZ-lw-18g" secondAttribute="trailing" constant="8" id="kMJ-Dc-u6I"/>
+                                                <constraint firstItem="ed8-B6-Dzo" firstAttribute="top" secondItem="f8h-pp-eA9" secondAttribute="top" constant="11" id="taa-fT-yxM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="DzR-xX-qAc">
@@ -128,6 +162,9 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGf-er-k6a">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="NW7-Gh-IdD"/>
+                                                    </constraints>
                                                     <state key="normal" title="Show">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
@@ -155,6 +192,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="animationSwitch" destination="0xp-5F-lf2" id="7xr-31-MbR"/>
+                        <outlet property="backgroundSwitch" destination="rfZ-lw-18g" id="ftZ-VH-FhW"/>
                         <outlet property="buttonShow" destination="iGf-er-k6a" id="2lS-4i-rGm"/>
                         <outlet property="messageSwitch" destination="Xp2-JR-eyy" id="AQI-0z-nQC"/>
                         <outlet property="rotationSwitch" destination="Stj-Yj-VwB" id="Gqi-X0-crS"/>

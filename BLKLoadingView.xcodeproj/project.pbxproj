@@ -422,6 +422,7 @@
 				884512C01AD12D2700E25802 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		884512C11AD12D2700E25802 /* Build configuration list for PBXNativeTarget "BLKLoadingViewTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				884512C31AD12D2700E25802 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
