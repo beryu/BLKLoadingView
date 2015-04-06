@@ -122,7 +122,7 @@
     }
 }
 
-- (void)dismissWithAnimated:(BOOL)animated
+- (void)dismissAnimated:(BOOL)animated
 {
     if (animated) {
         [UIView animateWithDuration:0.15

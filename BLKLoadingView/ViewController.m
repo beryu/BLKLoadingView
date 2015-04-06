@@ -60,7 +60,7 @@
     [self.hudView showInView:self.view.superview message:self.message animated:self.isAnimated];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self.hudView dismissWithAnimated:self.isAnimated];
+        [self.hudView dismissAnimated:self.isAnimated];
     });
 }
 

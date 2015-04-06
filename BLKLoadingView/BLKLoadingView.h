@@ -22,7 +22,7 @@
 
 - (void)showInView:(UIView *)view animated:(BOOL)animated;
 - (void)showInView:(UIView *)view message:(NSString *)message animated:(BOOL)animated;
-- (void)dismissWithAnimated:(BOOL)animated;
+- (void)dismissAnimated:(BOOL)animated;
 - (void)replaceHudView:(UIView *)hudView;
 
 @end
