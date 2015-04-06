@@ -15,10 +15,13 @@
 @property (nonatomic, weak) IBOutlet UIView *backgroundView;
 @property (nonatomic, weak) IBOutlet UILabel *messageLabel;
 @property (nonatomic) BOOL isRotation;
+@property (nonatomic) BOOL isModal;
 
 + (BLKLoadingView*) sharedView;
-- (void) showWithAnimated:(BOOL)animated;
-- (void) showWithMessage:(NSString *)message animated:(BOOL)animated;
-- (void) dismissWithAnimated:(BOOL)animated;
-- (void) replaceHudView:(UIView *)hudView;
+
+- (void)showInView:(UIView *)view animated:(BOOL)animated;
+- (void)showInView:(UIView *)view message:(NSString *)message animated:(BOOL)animated;
+- (void)dismissWithAnimated:(BOOL)animated;
+- (void)replaceHudView:(UIView *)hudView;
+
 @end

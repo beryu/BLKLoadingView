@@ -16,12 +16,14 @@
 @property (weak, nonatomic) IBOutlet UISwitch *animationSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *messageSwitch;
 @property (weak, nonatomic) IBOutlet UISwitch *backgroundSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *modalSwitch;
 @property (weak, nonatomic) IBOutlet UIButton *buttonShow;
 
 - (IBAction)rotationChanged:(id)sender;
 - (IBAction)animationChanged:(id)sender;
 - (IBAction)messageChanged:(id)sender;
 - (IBAction)backgroundChanged:(id)sender;
+- (IBAction)modalChanged:(id)sender;
 - (IBAction)buttonShowWasTouched:(id)sender;
 
 @end

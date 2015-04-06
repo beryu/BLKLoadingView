@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hir-fM-Yic">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Hir-fM-Yic">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -151,6 +151,40 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Y6i-n7-cO6">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Y6i-n7-cO6" id="UQE-Hg-tIG">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igb-Sz-Znq">
+                                                    <rect key="frame" x="8" y="11" width="200" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="WS6-Yf-fWu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v19-6V-SO5">
+                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="49" id="Qsf-i4-Tuh"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="modalChanged:" destination="Hir-fM-Yic" eventType="valueChanged" id="lbk-S2-AyY"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="v19-6V-SO5" firstAttribute="top" secondItem="UQE-Hg-tIG" secondAttribute="top" constant="6" id="cSf-VV-DhF"/>
+                                                <constraint firstItem="Igb-Sz-Znq" firstAttribute="top" secondItem="UQE-Hg-tIG" secondAttribute="top" constant="11" id="e6i-d1-kZo"/>
+                                                <constraint firstItem="Igb-Sz-Znq" firstAttribute="leading" secondItem="UQE-Hg-tIG" secondAttribute="leading" constant="8" id="hB2-ue-PC7"/>
+                                                <constraint firstAttribute="bottom" secondItem="v19-6V-SO5" secondAttribute="bottom" constant="6" id="nlB-i6-oE4"/>
+                                                <constraint firstAttribute="trailing" secondItem="v19-6V-SO5" secondAttribute="trailing" constant="8" id="obn-Kh-9Gh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Igb-Sz-Znq" secondAttribute="bottom" constant="11" id="tr0-ur-ajP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="DzR-xX-qAc">
@@ -195,6 +229,7 @@
                         <outlet property="backgroundSwitch" destination="rfZ-lw-18g" id="ftZ-VH-FhW"/>
                         <outlet property="buttonShow" destination="iGf-er-k6a" id="2lS-4i-rGm"/>
                         <outlet property="messageSwitch" destination="Xp2-JR-eyy" id="AQI-0z-nQC"/>
+                        <outlet property="modalSwitch" destination="v19-6V-SO5" id="l21-by-gZl"/>
                         <outlet property="rotationSwitch" destination="Stj-Yj-VwB" id="Gqi-X0-crS"/>
                     </connections>
                 </tableViewController>

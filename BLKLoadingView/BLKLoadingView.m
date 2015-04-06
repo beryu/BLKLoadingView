@@ -18,36 +18,63 @@
         NSString *nibName = NSStringFromClass([self class]);
         UINib *nib = [UINib nibWithNibName:nibName bundle:nil];
         sharedView = [nib instantiateWithOwner:nil options:nil][0];
-        sharedView.frame = [UIScreen mainScreen].bounds;
-        sharedView.backgroundView.layer.cornerRadius = 14;
-        sharedView.backgroundView.alpha = 0;
-        sharedView.hudContainerView.alpha = 0;
     });
+
     return sharedView;
 }
 
-- (void) showWithAnimated:(BOOL)animated
+- (id)init
 {
-    [self showWithMessage:nil animated:animated];
+    if (self = [super init]) {
+        [self p_intializeWithFrame:[UIScreen mainScreen].bounds];
+    }
+
+    return self;
 }
 
-- (void) showWithMessage:(NSString *)message animated:(BOOL)animated
+- (id)initWithCoder:(NSCoder *)coder
 {
-    if (!self.superview) {
-        NSEnumerator *frontToBackWindows = [UIApplication.sharedApplication.windows reverseObjectEnumerator];
-        for (UIWindow *window in frontToBackWindows){
-            BOOL windowOnMainScreen = window.screen == UIScreen.mainScreen;
-            BOOL windowIsVisible = !window.hidden && window.alpha > 0;
-            BOOL windowLevelNormal = window.windowLevel == UIWindowLevelNormal;
-
-            if (windowOnMainScreen && windowIsVisible && windowLevelNormal) {
-                [window addSubview:self];
-                break;
-            }
-        }
-    } else {
-        [self.superview bringSubviewToFront:self];
+    if (self = [super initWithCoder:coder]) {
+        [self p_intializeWithFrame:[UIScreen mainScreen].bounds];
     }
+
+    return self;
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    if (self = [super initWithFrame:frame]) {
+        [self p_intializeWithFrame:frame];
+    }
+
+    return self;
+}
+
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+
+    [self p_intializeWithFrame:[UIScreen mainScreen].bounds];
+}
+
+- (void)p_intializeWithFrame:(CGRect)frame
+{
+    self.frame = frame;
+    self.backgroundView.layer.cornerRadius = 14;
+    self.backgroundView.alpha = 0;
+    self.hudContainerView.alpha = 0;
+    self.isRotation = YES;
+    self.isModal = YES;
+}
+
+- (void)showInView:(UIView *)view animated:(BOOL)animated
+{
+    [self showInView:view message:nil animated:animated];
+}
+
+- (void)showInView:(UIView *)view message:(NSString *)message animated:(BOOL)animated
+{
+    [view addSubview:self];
 
     self.messageLabel.text = message;
     self.hudContainerView.transform = CGAffineTransformIdentity;
@@ -87,7 +114,7 @@
     }
 }
 
-- (void) dismissWithAnimated:(BOOL)animated
+- (void)dismissWithAnimated:(BOOL)animated
 {
     if (animated) {
         [UIView animateWithDuration:0.15
@@ -129,6 +156,12 @@
     _hudView = hudView;
     _hudView.frame = self.hudContainerView.bounds;
     [self.hudContainerView addSubview:_hudView];
+}
+
+- (void)setIsModal:(BOOL)isModal
+{
+    _isModal = isModal;
+    self.userInteractionEnabled = isModal;
 }
 
 @end

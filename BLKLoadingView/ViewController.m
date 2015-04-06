@@ -50,9 +50,14 @@
     self.hudView.backgroundView.backgroundColor = self.backgroundSwitch.isOn ? [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8] : [UIColor clearColor];
 }
 
+- (IBAction)modalChanged:(id)sender
+{
+    self.hudView.isModal = self.modalSwitch.isOn;
+}
+
 - (IBAction)buttonShowWasTouched:(id)sender
 {
-    [self.hudView showWithMessage:self.message animated:self.isAnimated];
+    [self.hudView showInView:self.view.superview message:self.message animated:self.isAnimated];
 
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t) (1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.hudView dismissWithAnimated:self.isAnimated];
