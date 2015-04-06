@@ -47,7 +47,7 @@
 
 - (IBAction)backgroundChanged:(id)sender
 {
-    self.hudView.backgroundView.backgroundColor = self.backgroundSwitch.isOn ? [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8] : [UIColor clearColor];
+    self.hudView.hudBackgroundColor = self.backgroundSwitch.isOn ? [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8] : [UIColor clearColor];
 }
 
 - (IBAction)modalChanged:(id)sender

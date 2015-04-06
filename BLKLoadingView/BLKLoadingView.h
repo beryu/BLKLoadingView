@@ -14,6 +14,7 @@
 @property (nonatomic, weak) IBOutlet UIView *hudContainerView;
 @property (nonatomic, weak) IBOutlet UIView *backgroundView;
 @property (nonatomic, weak) IBOutlet UILabel *messageLabel;
+@property (nonatomic, strong) UIColor *hudBackgroundColor;
 @property (nonatomic) BOOL isRotation;
 @property (nonatomic) BOOL isModal;
 

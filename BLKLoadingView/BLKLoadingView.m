@@ -65,6 +65,14 @@
     self.hudContainerView.alpha = 0;
     self.isRotation = YES;
     self.isModal = YES;
+    self.hudBackgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.8];
+}
+
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+
+    self.backgroundView.backgroundColor = self.hudBackgroundColor;
 }
 
 - (void)showInView:(UIView *)view animated:(BOOL)animated
@@ -162,6 +170,12 @@
 {
     _isModal = isModal;
     self.userInteractionEnabled = isModal;
+}
+
+- (void)setHudBackgroundColor:(UIColor *)hudBackgroundColor
+{
+    _hudBackgroundColor = hudBackgroundColor;
+    self.backgroundView.backgroundColor = hudBackgroundColor;
 }
 
 @end
